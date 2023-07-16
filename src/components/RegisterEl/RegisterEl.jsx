@@ -1,6 +1,14 @@
+import { useAuth } from 'hooks';
 import css from './RegisterEl.module.css';
 
-export const RegisterEl = ({ onChange }) => {
+export const RegisterEl = ({
+  onChange,
+  handleRegister,
+  registerEmailRef,
+  registerPasswordRef,
+  registerNameRef,
+}) => {
+  const { isAuthError } = useAuth();
   return (
     <>
       <button type="button" onClick={() => onChange('login')}>
@@ -11,7 +19,7 @@ export const RegisterEl = ({ onChange }) => {
           Name:
         </label>
         <input
-          // ref={contactNameRef}
+          ref={registerNameRef}
           className={css.input}
           id="name"
           type="text"
@@ -23,7 +31,7 @@ export const RegisterEl = ({ onChange }) => {
           Email:
         </label>
         <input
-          // ref={contactNameRef}
+          ref={registerEmailRef}
           className={css.input}
           id="email"
           type="email"
@@ -35,7 +43,7 @@ export const RegisterEl = ({ onChange }) => {
           Password:
         </label>
         <input
-          // ref={contactNumberRef}
+          ref={registerPasswordRef}
           className={css.input}
           id="password"
           type="password"
@@ -43,10 +51,11 @@ export const RegisterEl = ({ onChange }) => {
           placeholder="password"
           required
         />
-        <button type="submit" className={css.button}>
-          Add Contact
+        <button type="submit" className={css.button} onClick={handleRegister}>
+          Register
         </button>
       </form>
+      {isAuthError && <div>Error occurred while register</div>} <br />
     </>
   );
 };

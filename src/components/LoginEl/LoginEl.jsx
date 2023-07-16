@@ -1,17 +1,25 @@
+import { useAuth } from 'hooks';
 import css from './LoginEl.module.css';
 
-export const LoginEl = ({ onChange }) => {
+export const LoginEl = ({
+  onChange,
+  handleLogIn,
+  loginEmailRef,
+  loginPasswordRef,
+}) => {
+  const { isAuthError } = useAuth();
+
   return (
     <>
       <button type="button" onClick={() => onChange('registration')}>
         Registration
       </button>
-      <form>
+      <form onSubmit={handleLogIn}>
         <label className={css.label} htmlFor="email">
           Email:
         </label>
         <input
-          // ref={contactNameRef}
+          ref={loginEmailRef}
           className={css.input}
           id="email"
           type="email"
@@ -23,7 +31,7 @@ export const LoginEl = ({ onChange }) => {
           Password:
         </label>
         <input
-          // ref={contactNumberRef}
+          ref={loginPasswordRef}
           className={css.input}
           id="password"
           type="password"
@@ -35,6 +43,7 @@ export const LoginEl = ({ onChange }) => {
           Log in
         </button>
       </form>
+      {isAuthError && <div>Error occurred while logging in</div>} <br />
     </>
   );
 };
