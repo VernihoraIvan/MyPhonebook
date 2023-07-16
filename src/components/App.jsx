@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
 import { useAuth } from 'hooks/index';
 import { AuthPage } from 'pages/AuthPage/AuthPage';
+import { Home } from './Home/Home';
 // import { selectIsLoggedIn, selectUser } from 'redux/auth/selectors';
 
 export const App = () => {
@@ -34,7 +35,7 @@ export const App = () => {
       </div>
     );
   } else {
-    return <AuthPage />;
+    return <Home />;
   }
   // return (
   //   <div className={css.container}>

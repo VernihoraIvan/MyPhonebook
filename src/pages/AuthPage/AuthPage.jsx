@@ -31,24 +31,24 @@ export const AuthPage = () => {
     dispatch(logIn({ email, password }));
   };
 
-  if (pageType === 'login') {
-    return (
-      <LoginEl
-        onChange={setPageType}
-        handleLogIn={handleLogIn}
-        loginEmailRef={loginEmailRef}
-        loginPasswordRef={loginPasswordRef}
-      />
-    );
-  } else {
-    return (
-      <RegisterEl
-        onChange={setPageType}
-        handleRegister={handleRegister}
-        registerEmailRef={registerEmailRef}
-        registerPasswordRef={registerPasswordRef}
-        registerNameRef={registerNameRef}
-      />
-    );
-  }
+  //   if (pageType === 'login') {
+  //     return (
+  //       <LoginEl
+  //         onChange={setPageType}
+  //         handleLogIn={handleLogIn}
+  //         loginEmailRef={loginEmailRef}
+  //         loginPasswordRef={loginPasswordRef}
+  //       />
+  //     );
+  //   } else {
+  //     return (
+  //       <RegisterEl
+  //         onChange={setPageType}
+  //         handleRegister={handleRegister}
+  //         registerEmailRef={registerEmailRef}
+  //         registerPasswordRef={registerPasswordRef}
+  //         registerNameRef={registerNameRef}
+  //       />
+  //     );
+  //   }
 };
