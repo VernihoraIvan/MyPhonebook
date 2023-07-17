@@ -12,6 +12,7 @@ export const Home = () => {
   }
   return (
     <>
+      <p>Home</p>
       <button onClick={() => setPageType('login')}>Log in</button>
       <button onClick={() => setPageType('register')}>Register</button>
     </>

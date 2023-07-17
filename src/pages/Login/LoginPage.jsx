@@ -3,6 +3,7 @@ import { useState } from 'react';
 import css from './LoginPage.module.css';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginPage = ({ setPageType }) => {
   const [email, setEmail] = useState('');
@@ -13,11 +14,16 @@ export const LoginPage = ({ setPageType }) => {
   const handleLogIn = event => {
     event.preventDefault();
     dispatch(logIn({ email, password }));
+    navigate('/contacts');
+  };
+  const navigate = useNavigate();
+  const handleRegisterNavigate = () => {
+    navigate('/register');
   };
 
   return (
     <>
-      <button type="button" onClick={() => setPageType('register')}>
+      <button type="button" onClick={handleRegisterNavigate}>
         Registration
       </button>
       <form onSubmit={handleLogIn}>

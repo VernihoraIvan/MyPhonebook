@@ -3,6 +3,7 @@ import css from './RegisterPage.module.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { useNavigate } from 'react-router-dom';
 
 export const RegisterPage = ({ setPageType }) => {
   const [email, setEmail] = useState('');
@@ -13,9 +14,14 @@ export const RegisterPage = ({ setPageType }) => {
   const handleRegister = () => {
     dispatch(register({ email, password, name }));
   };
+
+  const navigate = useNavigate();
+  const handleLoginNavigate = () => {
+    navigate('/login');
+  };
   return (
     <>
-      <button type="button" onClick={() => setPageType('login')}>
+      <button type="button" onClick={handleLoginNavigate}>
         Login
       </button>
       <form>
