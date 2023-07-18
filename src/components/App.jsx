@@ -15,9 +15,11 @@ import { RegisterPage } from 'pages/Register/RegisterPage';
 import NotFound from 'pages/NotFound/NotFound';
 import ProtectedRoute from 'routes/ProtectedRoute';
 import { Content } from 'pages/Content/Content';
+import { refreshing } from 'redux/auth/operations';
+import { Loader } from './Loader/Loader';
 
 export const App = () => {
-  const { isLoggedIn, user } = useAuth();
+  const { isLoggedIn, user, isRefreshing } = useAuth();
   console.log({ isLoggedIn, user });
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -28,6 +30,13 @@ export const App = () => {
     }
   }, [isLoggedIn, navigate]);
 
+  useEffect(() => {
+    dispatch(refreshing());
+  }, [dispatch]);
+
+  if (isRefreshing) {
+    return <Loader />;
+  }
   return (
     <Routes>
       <Route path="/" element={<Home />} index />

@@ -8,7 +8,7 @@ const NotFound = () => {
     setTimeout(() => {
       navigate('/', { replace: true });
     }, 3000);
-  }, []);
+  }, [navigate]);
 
   return <div>Not Found</div>;
 };
