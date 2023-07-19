@@ -13,12 +13,6 @@ const initialState = {
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
-
-  // reducers: {
-  //   filterContact(state, action) {
-  //     state.filter = action.payload;
-  //   },
-  // },
   extraReducers: {
     [fetchContacts.pending](state) {
       state.contacts.isLoading = true;

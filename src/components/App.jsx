@@ -19,10 +19,13 @@ import { refreshing } from 'redux/auth/operations';
 import { Loader } from './Loader/Loader';
 
 export const App = () => {
-  const { isLoggedIn, user, isRefreshing } = useAuth();
-  console.log({ isLoggedIn, user });
+  const { isLoggedIn, user, isRefreshing } = useAuth(); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   useEffect(() => {
     if (isLoggedIn) {

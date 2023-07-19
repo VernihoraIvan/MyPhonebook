@@ -9,8 +9,7 @@ export const LoginPage = ({ setPageType }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { isAuthError } = useAuth();
-  const dispatch = useDispatch();
-  console.log({ email, password });
+  const dispatch = useDispatch(); 
   const handleLogIn = event => {
     event.preventDefault();
     dispatch(logIn({ email, password }));

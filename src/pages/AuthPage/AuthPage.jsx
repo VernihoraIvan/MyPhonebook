@@ -19,15 +19,13 @@ export const AuthPage = () => {
     event.preventDefault();
     const email = registerEmailRef.current.value;
     const password = registerPasswordRef.current.value;
-    const name = registerNameRef.current.value;
-    console.log({ email, password, name });
+    const name = registerNameRef.current.value; 
     dispatch(register({ email, password, name }));
   };
   const handleLogIn = event => {
     event.preventDefault();
     const email = loginEmailRef.current.value;
-    const password = loginPasswordRef.current.value;
-    console.log({ email, password });
+    const password = loginPasswordRef.current.value; 
     dispatch(logIn({ email, password }));
   };
 
