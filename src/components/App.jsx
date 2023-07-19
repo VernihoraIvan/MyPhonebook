@@ -19,7 +19,7 @@ import { refreshing } from 'redux/auth/operations';
 import { Loader } from './Loader/Loader';
 
 export const App = () => {
-  const { isLoggedIn, user, isRefreshing } = useAuth(); 
+  const { isLoggedIn, user, isRefreshing } = useAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

@@ -1,17 +1,12 @@
 import ContactForm from 'components/ContactForm/ContactForm';
 import Contacts from 'components/Contacts/Contacts';
 import FilterInput from 'components/FilterInput/FilterInput';
-import { useDispatch } from 'react-redux';
-import { logOut } from 'redux/auth/operations';
+import { Person } from 'components/Person/Person';
 
 export const Content = () => {
-  const dispatch = useDispatch();
-  const logOutHandler = () => {
-    dispatch(logOut());
-  };
   return (
     <>
-      <button onClick={logOutHandler}>Log Out</button>
+      <Person />
       <ContactForm />
       <FilterInput />
       <Contacts />

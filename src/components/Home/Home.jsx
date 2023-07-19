@@ -10,9 +10,9 @@ export const Home = () => {
   if (pageType === 'register') {
     return <RegisterPage setPageType={setPageType} />;
   }
+
   return (
     <>
-      <p>Home</p>
       <button onClick={() => setPageType('login')}>Log in</button>
       <button onClick={() => setPageType('register')}>Register</button>
     </>
