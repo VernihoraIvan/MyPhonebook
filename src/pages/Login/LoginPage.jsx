@@ -11,9 +11,8 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useAuth } from 'hooks';
+// import { useAuth } from 'hooks';
 import { useState } from 'react';
-import css from './LoginPage.module.css';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
@@ -21,17 +20,10 @@ import { useNavigate } from 'react-router-dom';
 export const LoginPage = ({ setPageType }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { isAuthError } = useAuth();
+  // const { isAuthError } = useAuth();
+  // console.log(isAuthError);
   const dispatch = useDispatch();
-  // const handleLogIn = event => {
-  //   event.preventDefault();
-  //   dispatch(logIn({ email, password }));
-  //   navigate('/contacts');
-  // };
   const navigate = useNavigate();
-  const handleRegisterNavigate = () => {
-    navigate('/register');
-  };
   const handleChange = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -43,53 +35,11 @@ export const LoginPage = ({ setPageType }) => {
     event.preventDefault();
     dispatch(logIn({ email, password }));
     navigate('/contacts');
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
   };
   const defaultTheme = createTheme();
 
   return (
     <>
-      {/* <button type="button" onClick={handleRegisterNavigate}>
-        Registration
-      </button>
-      <form onSubmit={handleLogIn}>
-        <label className={css.label} htmlFor="email">
-          Email:
-        </label>
-        <input
-          //   ref={loginEmailRef}
-          onChange={event => setEmail(event.target.value)}
-          value={email}
-          className={css.input}
-          id="email"
-          type="email"
-          name="email"
-          placeholder="Enter Your email"
-          required
-        />
-        <label className={css.label} htmlFor="password">
-          Password:
-        </label>
-        <input
-          //   ref={loginPasswordRef}
-          onChange={event => setPassword(event.target.value)}
-          value={password}
-          className={css.input}
-          id="password"
-          type="password"
-          name="password"
-          placeholder="Enter Your password"
-          required
-        />
-        <button type="submit" className={css.button}>
-          Log in
-        </button>
-      </form>
-      {isAuthError && <div>Error occurred while logging in</div>} <br /> */}
       <ThemeProvider theme={defaultTheme}>
         <Grid container component="main" sx={{ height: '100vh' }}>
           <CssBaseline />
@@ -132,7 +82,7 @@ export const LoginPage = ({ setPageType }) => {
                 <LockOutlinedIcon />
               </Avatar>
               <Typography component="h1" variant="h5">
-                Sign in
+                Log in
               </Typography>
               <Box
                 component="form"
@@ -176,11 +126,6 @@ export const LoginPage = ({ setPageType }) => {
                   Log In
                 </Button>
                 <Grid container>
-                  <Grid item xs>
-                    <Link href="#" variant="body2">
-                      Forgot password?
-                    </Link>
-                  </Grid>
                   <Grid item>
                     <Link
                       href="/goit-react-hw-08-phonebook/register"

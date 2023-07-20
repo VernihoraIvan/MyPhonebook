@@ -4,10 +4,11 @@ import { getContactsList, getFilter } from '../../redux/contacts/selectors';
 import { deleteContact, fetchContacts } from '../../redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { Button } from '@mui/material';
 
 const Contacts = () => {
   const items = useSelector(getContactsList);
-  const filter = useSelector(getFilter); 
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
   const onDelete = id => {
     dispatch(deleteContact(id));
@@ -26,13 +27,13 @@ const Contacts = () => {
       {filteredContactsList?.map(({ id, name, number }) => (
         <li key={id} className={css.list_item}>
           {name}: {number}{' '}
-          <button
-            className={css.button}
+          <Button
+            variant="contained"
             type="button"
             onClick={() => onDelete(id)}
           >
             Delete
-          </button>
+          </Button>
         </li>
       ))}
     </ul>

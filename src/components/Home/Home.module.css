@@ -1,0 +1,18 @@
+.container {
+  height: 100vh;
+  margin: 100 auto;
+}
+
+.buttons {
+  position: absolute;
+  margin: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  color: #ffff;
+}

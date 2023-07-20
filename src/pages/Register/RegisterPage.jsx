@@ -11,27 +11,20 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useAuth } from 'hooks';
-import css from './RegisterPage.module.css';
+// import { useAuth } from 'hooks';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
 
-export const RegisterPage = ({ setPageType }) => {
+export const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const { isAuthError } = useAuth();
+  // const { isAuthError } = useAuth();
   const dispatch = useDispatch();
-  const handleRegister = () => {
-    dispatch(register({ email, password, name }));
-  };
 
   const navigate = useNavigate();
-  // const handleLoginNavigate = () => {
-  //   navigate('/login');
-  // };
   const handleChange = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -42,13 +35,8 @@ export const RegisterPage = ({ setPageType }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(register({ email, password }));
+    dispatch(register({ email, password, name }));
     navigate('/contacts');
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
   };
   const defaultTheme = createTheme();
   return (
@@ -102,7 +90,6 @@ export const RegisterPage = ({ setPageType }) => {
                 noValidate
                 onSubmit={handleSubmit}
                 onChange={handleChange}
-                // onSubmit={handleLogIn}
                 sx={{ mt: 1 }}
               >
                 <TextField
@@ -149,11 +136,6 @@ export const RegisterPage = ({ setPageType }) => {
                   Sign up
                 </Button>
                 <Grid container>
-                  <Grid item xs>
-                    <Link href="#" variant="body2">
-                      Forgot password?
-                    </Link>
-                  </Grid>
                   <Grid item>
                     <Link
                       href="/goit-react-hw-08-phonebook/login"
@@ -181,57 +163,6 @@ export const RegisterPage = ({ setPageType }) => {
         {new Date().getFullYear()}
         {'.'}
       </Typography>
-      {/* <button type="button" onClick={handleLoginNavigate}>
-        Login
-      </button>
-      <form>
-        <label className={css.label} htmlFor="name">
-          Name:
-        </label>
-        <input
-          //   ref={registerNameRef}
-          onChange={event => setName(event.target.value)}
-          value={name}
-          className={css.input}
-          id="name"
-          type="text"
-          name="name"
-          placeholder="name"
-          required
-        />
-        <label className={css.label} htmlFor="email">
-          Email:
-        </label>
-        <input
-          //   ref={registerEmailRef}
-          onChange={event => setEmail(event.target.value)}
-          value={email}
-          className={css.input}
-          id="email"
-          type="email"
-          name="email"
-          placeholder="email"
-          required
-        />
-        <label className={css.label} htmlFor="password">
-          Password:
-        </label>
-        <input
-          //   ref={registerPasswordRef}
-          onChange={event => setPassword(event.target.value)}
-          value={password}
-          className={css.input}
-          id="password"
-          type="password"
-          name="password"
-          placeholder="password"
-          required
-        />
-        <button type="submit" className={css.button} onClick={handleRegister}>
-          Register
-        </button>
-      </form>
-      {isAuthError && <div>Error occurred while register</div>} <br /> */}
     </>
   );
 };

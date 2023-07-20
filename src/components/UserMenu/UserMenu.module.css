@@ -1,25 +1,18 @@
-.list {
+.container {
+  padding-right: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 40px;
-  padding-right: 50px;
-}
-
-.list_item {
-  font-size: 20px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
 }
 
 .button {
-  margin-left: 30px;
+  height: 25px;
+  background-color: crimson;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 4px;
-  padding: 6px 16px 6px 16px;
-  background-color: #4d5ae5;
   color: #ffff;
   letter-spacing: 0.02em;
   line-height: 1.17;
@@ -31,10 +24,10 @@
 .button:hover,
 .button:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  background-color: #404bbf;
+  background-color: #c8ed12;
 }
 
 .button:active {
   box-shadow: 0px 4px 4px 0px #00000026;
-  background-color: #404bbf;
+  background-color: #7eab03;
 }

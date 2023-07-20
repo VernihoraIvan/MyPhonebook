@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import css from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
 import { addContact } from 'redux/contacts/operations';
+import { Button } from '@mui/material';
 
 const ContactForm = () => {
   const items = useSelector(getContactsList);
@@ -44,36 +45,41 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={saveContactHandler}>
+    <form className={css.form} onSubmit={saveContactHandler}>
       <label className={css.label} htmlFor="name">
         Name:
+        <input
+          ref={contactNameRef}
+          className={css.input}
+          id="name"
+          type="text"
+          name="name"
+          placeholder="name"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required
+        />
       </label>
-      <input
-        ref={contactNameRef}
-        className={css.input}
-        id="name"
-        type="text"
-        name="name"
-        placeholder="name"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-      />
       <label className={css.label} htmlFor="tel">
         Number:
+        <input
+          ref={contactNumberRef}
+          className={css.input}
+          id="tel"
+          type="tel"
+          name="number"
+          placeholder="number"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required
+        />
       </label>
-      <input
-        ref={contactNumberRef}
-        className={css.input}
-        id="tel"
-        type="tel"
-        name="number"
-        placeholder="number"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        required
-      />
-      <button type="submit" className={css.button} onClick={saveContactHandler}>
+      <Button
+        variant="contained"
+        type="submit"
+        className={css.button}
+        onClick={saveContactHandler}
+      >
         Add Contact
-      </button>
+      </Button>
     </form>
   );
 };
