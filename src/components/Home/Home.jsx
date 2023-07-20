@@ -1,17 +1,7 @@
 import { Button, CssBaseline, Grid } from '@mui/material';
-import { LoginPage } from 'pages/Login/LoginPage';
-import { RegisterPage } from 'pages/Register/RegisterPage';
-import { useState } from 'react';
 import css from './Home.module.css';
 import { useNavigate } from 'react-router-dom';
 export const Home = () => {
-  // const [pageType, setPageType] = useState('');
-  // if (pageType === 'login') {
-  //   return <LoginPage setPageType={setPageType} />;
-  // }
-  // if (pageType === 'register') {
-  //   return <RegisterPage setPageType={setPageType} />;
-  // }
   const navigate = useNavigate();
   const handleRegisterNavigate = () => {
     navigate('/register');
