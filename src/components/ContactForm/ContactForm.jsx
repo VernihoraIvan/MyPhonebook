@@ -4,7 +4,7 @@ import { getContactsList } from '../../redux/contacts/selectors';
 import { useDispatch } from 'react-redux';
 
 import css from './ContactForm.module.css';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { addContact } from 'redux/contacts/operations';
 import { Button } from '@mui/material';
 
@@ -37,9 +37,7 @@ const ContactForm = () => {
       alert(`Please write a number`);
       return;
     }
-    dispatch(
-      addContact({ name: contactName, number: contactNumber, id: nanoid() })
-    );
+    dispatch(addContact({ name: contactName, number: contactNumber }));
     contactNameRef.current.value = '';
     contactNumberRef.current.value = '';
   };

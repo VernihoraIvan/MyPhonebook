@@ -29,9 +29,9 @@ export const LoginPage = ({ setPageType }) => {
     setPassword(data.get('password'));
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
-    dispatch(logIn({ email, password }));
+    await dispatch(logIn({ email, password }));
     navigate('/contacts');
   };
   const defaultTheme = createTheme();

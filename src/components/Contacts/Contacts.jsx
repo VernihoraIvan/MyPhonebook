@@ -24,13 +24,13 @@ const Contacts = () => {
 
   return (
     <ul className={css.list}>
-      {filteredContactsList?.map(({ id, name, number }) => (
-        <li key={id} className={css.list_item}>
+      {filteredContactsList?.map(({ _id, name, number }) => (
+        <li key={_id} className={css.list_item}>
           {name}: {number}{' '}
           <Button
             variant="contained"
             type="button"
-            onClick={() => onDelete(id)}
+            onClick={() => onDelete(_id)}
           >
             Delete
           </Button>

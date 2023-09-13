@@ -2,6 +2,7 @@ import { useAuth } from 'hooks';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import css from './UserMenu.module.css';
+import { Link } from 'react-router-dom';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export const UserMenu = () => {
       >
         Log Out
       </button>
+      <Link to="/profile">Profile</Link>
     </div>
   );
 };

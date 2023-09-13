@@ -18,6 +18,3 @@ export const useAuth = () => {
     isRefreshing,
   };
 };
-
-// dianadiana@gmail.com
-// 12345678qwerty
