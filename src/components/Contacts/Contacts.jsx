@@ -1,7 +1,7 @@
 import css from './Contacts.module.css';
 import { useSelector } from 'react-redux';
 import { getContactsList, getFilter } from '../../redux/contacts/selectors';
-import { deleteContact, fetchContacts } from '../../redux/contacts/operations';
+import { deleteContact, fetchContacts } from '../../redux/contacts/thunk';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Button } from '@mui/material';

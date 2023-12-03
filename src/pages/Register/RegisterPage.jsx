@@ -12,7 +12,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import { useAuth } from 'hooks';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/operations';
+import { register } from 'redux/auth/thunk';
 import { useNavigate } from 'react-router-dom';
 
 export const RegisterPage = () => {

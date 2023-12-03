@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import css from './ContactForm.module.css';
 // import { nanoid } from 'nanoid';
-import { addContact } from 'redux/contacts/operations';
+import { addContact } from 'redux/contacts/thunk';
 import { Button } from '@mui/material';
 
 const ContactForm = () => {

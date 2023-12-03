@@ -1,6 +1,6 @@
 import { useAuth } from 'hooks';
 import { useDispatch } from 'react-redux';
-import { logOut } from 'redux/auth/operations';
+import { logOut } from 'redux/auth/thunk';
 import css from './UserMenu.module.css';
 import { Link } from 'react-router-dom';
 

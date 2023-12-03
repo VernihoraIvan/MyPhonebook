@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { LoginEl } from 'components/LoginEl/LoginEl';
 import { RegisterEl } from 'components/RegisterEl/RegisterEl';
 import { useDispatch } from 'react-redux';
-import { logIn, register } from 'redux/auth/operations';
+import { logIn, register } from 'redux/auth/thunk';
 
 export const AuthPage = () => {
   const [pageType, setPageType] = useState('login');

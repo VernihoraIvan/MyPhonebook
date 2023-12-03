@@ -8,10 +8,11 @@ import { RegisterPage } from 'pages/Register/RegisterPage';
 import NotFound from 'pages/NotFound/NotFound';
 import ProtectedRoute from 'routes/ProtectedRoute';
 import { Content } from 'pages/Content/Content';
-import { refreshing } from 'redux/auth/operations';
+import { refreshing } from 'redux/auth/thunk';
 import { Loader } from './Loader/Loader';
 import ProfilePage from 'pages/ProfilePage/ProfilePage';
 import { Header } from './Header/Header';
+import UpdateAvatar from 'pages/UpdateAvatar/UpdateAvatar';
 // import Layout from './Layout/Layout';
 
 export const App = () => {
@@ -56,6 +57,7 @@ export const App = () => {
           </ProtectedRoute>
         }
       />
+      <Route path="/profile/update" element={<UpdateAvatar />} />
       {/* </Route> */}
     </Routes>
   );
