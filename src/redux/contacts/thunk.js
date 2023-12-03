@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://jazzy-smakager-bb31ad.netlify.app/';
+// axios.defaults.baseURL = 'https://jazzy-smakager-bb31ad.netlify.app/';
+axios.defaults.baseURL = 'http://localhost:8000/';
 
 export const fetchContacts = createAsyncThunk('contacts/fetchAll', async () => {
   const { data } = await axios.get('/contacts');
