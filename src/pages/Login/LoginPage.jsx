@@ -119,10 +119,7 @@ export const LoginPage = ({ setPageType }) => {
                 </Button>
                 <Grid container>
                   <Grid item>
-                    <Link
-                      href="/goit-react-hw-08-phonebook/register"
-                      variant="body2"
-                    >
+                    <Link href="/MyPhonebook/register" variant="body2">
                       {"Don't have an account? Sign Up"}
                     </Link>
                   </Grid>
