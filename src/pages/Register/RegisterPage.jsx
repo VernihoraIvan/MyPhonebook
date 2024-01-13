@@ -130,10 +130,7 @@ export const RegisterPage = () => {
                 </Button>
                 <Grid container>
                   <Grid item>
-                    <Link
-                      href="/goit-react-hw-08-phonebook/login"
-                      variant="body2"
-                    >
+                    <Link href="/MyPhonebook/login" variant="body2">
                       {'If you have an account, Log in.'}
                     </Link>
                   </Grid>
